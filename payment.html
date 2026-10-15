@@ -1,0 +1,494 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#14071b">
+    <meta name="robots" content="noindex">
+
+    <title>Complete Your Payment — JOVIA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: #14071b;
+            color: #faf7fc;
+            font-family: "DM Sans", sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; cursor: pointer; }
+        a, button { outline-offset: 4px; }
+        h1, h2, h3 { font-family: "Manrope", sans-serif; }
+        p { color: #bcacc7; font-size: 13px; line-height: 1.8; }
+
+        .checkout-container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ffffff15;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 125px;
+            height: 42px;
+            object-fit: contain;
+            object-position: left center;
+        }
+
+        .secured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 30px;
+            background: #24132e;
+            border: 1px solid #ffffff15;
+            color: #8eedb1;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .secured-badge i { color: #f0bb1e; }
+
+        .small { color: #bcacc7; font-size: 11px; line-height: 1.8; }
+
+        .heading-area {
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+        }
+
+        .package-tag {
+            display: inline-block;
+            color: #f2db6f;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Timer Banner */
+        .timer-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            background: #24132e;
+            border: 1px solid #f0bb1e30;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            color: #bcacc7;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timer-label i { color: #f0bb1e; font-size: 16px; }
+
+        .timer-countdown {
+            font-family: "Manrope", sans-serif;
+            font-weight: 700;
+            color: #f2db6f;
+            font-size: 16px;
+        }
+
+        /* Bank Transfer Card */
+        .transfer-card {
+            background: #24132e;
+            border: 1px solid #ffffff15;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 22px;
+        }
+
+        .transfer-header {
+            padding: 16px 20px;
+            background: #1c0d25;
+            border-bottom: 1px solid #ffffff10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "Manrope", sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #f2db6f;
+        }
+
+        .transfer-body {
+            padding: 4px 20px 20px;
+        }
+
+        .field-group {
+            margin-top: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #ffffff10;
+        }
+
+        .field-group:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .field-label {
+            font-size: 10px;
+            letter-spacing: 1.2px;
+            color: #bcacc7;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .field-value {
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #faf7fc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .field-value.number {
+            font-size: 22px;
+            letter-spacing: 1px;
+            color: #f2db6f;
+        }
+
+        .copy-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            border: 0;
+            border-radius: 10px;
+            background: #1c0d25;
+            border: 1px solid #ffffff20;
+            color: #faf7fc;
+            font-size: 12px;
+            font-weight: 700;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background: #38233f;
+            border-color: #f0bb1e60;
+        }
+
+        .copy-button.copied {
+            background: #153822;
+            border-color: #36db6950;
+            color: #8eedb1;
+        }
+
+        /* Notice Box */
+        .notice {
+            padding: 20px;
+            border: 1px solid #f0bb1e40;
+            border-radius: 14px;
+            background: #f0bb1e08;
+            margin-bottom: 24px;
+        }
+
+        .notice p {
+            margin: 0;
+            color: #bcacc7;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .notice p strong {
+            color: #faf7fc;
+        }
+
+        /* Action Buttons */
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            padding: 16px 18px;
+            border: 0;
+            border-radius: 12px;
+            background: linear-gradient(110deg, #f0bb1e, #f2db6f);
+            color: #25152d;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(240, 187, 30, 0.2);
+        }
+
+        .button.secondary {
+            border: 1px solid #ffffff20;
+            background: transparent;
+            color: #bcacc7;
+            margin-top: 10px;
+            box-shadow: none;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 25px;
+            color: #bcacc7;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        /* Modal popup for confirmation */
+        dialog {
+            width: min(440px, calc(100% - 32px));
+            padding: 30px;
+            border: 1px solid #765780;
+            border-radius: 20px;
+            background: #25132f;
+            color: #faf7fc;
+            text-align: center;
+        }
+
+        dialog::backdrop {
+            background: #07020bd9;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #36db6915;
+            color: #8eedb1;
+            font-size: 30px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 20px;
+        }
+
+        dialog h2 { margin: 0 0 10px 0; font-size: 22px; }
+        dialog p { margin-bottom: 25px; }
+    </style>
+</head>
+<body>
+
+<div class="checkout-container">
+    <div>
+        <div class="topbar">
+            <a href="dashboard.html" aria-label="Back to dashboard">
+                <img class="logo" src="logo.png" alt="JOVIA" onerror="this.src='https://placehold.co/125x42/24132e/f2db6f?text=JOVIA'">
+            </a>
+
+            <div class="secured-badge" aria-label="Secured Checkout">
+                <i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Secured
+            </div>
+        </div>
+
+        <div class="heading-area">
+            <h1>Complete Your Payment</h1>
+            <div class="package-tag" id="packageTitle">Gold Package — ₦15,000</div>
+        </div>
+
+        <div class="timer-banner">
+            <span class="timer-label">
+                <i class="bi bi-clock-history" aria-hidden="true"></i> Complete transfer in:
+            </span>
+            <span class="timer-countdown" id="countdownTimer">14:59</span>
+        </div>
+
+        <div class="transfer-card">
+            <div class="transfer-header">
+                <i class="bi bi-bank" aria-hidden="true"></i> Transfer to this account
+            </div>
+            <div class="transfer-body">
+                <div class="field-group">
+                    <div class="field-label">Bank Name</div>
+                    <div class="field-value">KUDA MFB</div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label">Account Name</div>
+                    <div class="field-value">CHIBUIKEM P. UGWUANYI</div>
+                </div>
+
+                <div class="field-group">
+                    <div class="field-label">Account Number</div>
+                    <div class="field-value number">
+                        <span id="accountNumber">2078450723</span>
+                    </div>
+                </div>
+
+                <button class="copy-button" id="copyBtn" type="button">
+                    <i class="bi bi-copy" aria-hidden="true"></i> <span id="copyText">Copy Account Number</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="notice">
+            <p>
+                After payment, send your proof of transfer to our support team and your account will be activated within <strong>5–15 minutes</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <button class="button" id="paidBtn" type="button">
+            I HAVE MADE MY PAYMENT
+            <i class="bi bi-check2-circle" aria-hidden="true"></i>
+        </button>
+
+        <a class="button secondary" href="dashboard.html">
+            <i class="bi bi-arrow-left" aria-hidden="true"></i> Return to Dashboard
+        </a>
+
+        <div class="footer-note">
+            By completing this payment, you agree to JOVIA's Terms of Service and Privacy Policy. Your account will be activated within minutes of payment confirmation.
+        </div>
+    </div>
+</div>
+
+<dialog id="successDialog">
+    <div class="modal-icon">
+        <i class="bi bi-check-lg" aria-hidden="true"></i>
+    </div>
+    <h2>Payment Notice Received!</h2>
+    <p>We are verifying your transfer. Please ensure you have sent your proof of transfer to support. Your account will unlock shortly.</p>
+    <button class="button" id="closeModalBtn" type="button">Got it, Return Home</button>
+</dialog>
+
+<script>
+    // 1. Parse URL Parameters for Package
+    const urlParams = new URLSearchParams(window.location.search);
+    const packageId = urlParams.get('package') || '2';
+
+    const packageTitle = document.getElementById('packageTitle');
+    if (packageId === '1') {
+        packageTitle.textContent = 'Silver Package — ₦9,000';
+    } else {
+        packageTitle.textContent = 'Gold Package — ₦15,000';
+    }
+
+    // 2. Countdown Timer (15 minutes)
+    let totalSeconds = 15 * 60;
+    const countdownEl = document.getElementById('countdownTimer');
+
+    const timerInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(timerInterval);
+            countdownEl.textContent = 'EXPIRED';
+            countdownEl.style.color = '#ff6b6b';
+            return;
+        }
+        totalSeconds--;
+        const mins = Math.floor(totalSeconds / 60);
+        const secs = totalSeconds % 60;
+        countdownEl.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }, 1000);
+
+    // 3. Copy Account Number Functionality
+    const copyBtn = document.getElementById('copyBtn');
+    const copyText = document.getElementById('copyText');
+    const accountNumber = '3004047620';
+
+    copyBtn.addEventListener('click', () => {
+        const textArea = document.createElement("textarea");
+        textArea.value = accountNumber;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            copyBtn.classList.add('copied');
+            copyText.textContent = 'Account Number Copied!';
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                copyText.textContent = 'Copy Account Number';
+            }, 2500);
+        } catch (err) {
+            console.error('Failed to copy', err);
+        }
+        document.body.removeChild(textArea);
+    });
+
+    // 4. Payment confirmation modal trigger
+    const paidBtn = document.getElementById('paidBtn');
+    const successDialog = document.getElementById('successDialog');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    paidBtn.addEventListener('click', () => {
+        if (successDialog.showModal) {
+            successDialog.showModal();
+        }
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        successDialog.close();
+        window.location.href = 'dashboard.html';
+    });
+
+    // 5. Security Protections (matching dashboard)
+    document.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function(e){
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && e.key === "I") ||
+            (e.ctrlKey && e.shiftKey && e.key === "J") ||
+            (e.ctrlKey && e.shiftKey && e.key === "C") ||
+            (e.ctrlKey && e.key === "U") ||
+            (e.ctrlKey && e.key === "S")
+        ){
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    document.querySelectorAll("img").forEach(img => {
+        img.setAttribute("draggable", "false");
+    });
+
+    document.addEventListener("copy", function(e){
+        // Allow copy inside our copy action, block elsewhere
+        if (e.target.id !== 'accountNumber') {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener("cut", function(e){ e.preventDefault(); });
+    document.addEventListener("paste", function(e){ e.preventDefault(); });
+</script>
+
+</body>
+</html>
+```
