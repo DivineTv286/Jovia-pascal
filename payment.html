@@ -76,8 +76,6 @@
 
         .secured-badge i { color: #f0bb1e; }
 
-        .small { color: #bcacc7; font-size: 11px; line-height: 1.8; }
-
         .heading-area {
             margin-bottom: 24px;
         }
@@ -249,6 +247,7 @@
             font-size: 13px;
             font-weight: 700;
             box-shadow: 0 4px 20px rgba(240, 187, 30, 0.2);
+            text-align: center;
         }
 
         .button.secondary {
@@ -266,37 +265,6 @@
             font-size: 11px;
             line-height: 1.7;
         }
-
-        /* Modal popup for confirmation */
-        dialog {
-            width: min(440px, calc(100% - 32px));
-            padding: 30px;
-            border: 1px solid #765780;
-            border-radius: 20px;
-            background: #25132f;
-            color: #faf7fc;
-            text-align: center;
-        }
-
-        dialog::backdrop {
-            background: #07020bd9;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: #36db6915;
-            color: #8eedb1;
-            font-size: 30px;
-            display: grid;
-            place-items: center;
-            margin: 0 auto 20px;
-        }
-
-        dialog h2 { margin: 0 0 10px 0; font-size: 22px; }
-        dialog p { margin-bottom: 25px; }
     </style>
 </head>
 <body>
@@ -355,16 +323,16 @@
 
         <div class="notice">
             <p>
-                After payment, send your proof of transfer to our support team and your account will be activated within <strong>5–15 minutes</strong>.
+                After payment, send your proof of transfer to our support team on Telegram and your account will be activated within <strong>5–15 minutes</strong>.
             </p>
         </div>
     </div>
 
     <div>
-        <button class="button" id="paidBtn" type="button">
+        <a class="button" id="telegramBtn" href="https://t.me/joviaofficial1?text=I%20have%20made%20my%20payment,%20here%27s%20my%20payment%20proof" target="_blank" rel="noopener noreferrer">
             I HAVE MADE MY PAYMENT
-            <i class="bi bi-check2-circle" aria-hidden="true"></i>
-        </button>
+            <i class="bi bi-telegram" aria-hidden="true"></i>
+        </a>
 
         <a class="button secondary" href="dashboard.html">
             <i class="bi bi-arrow-left" aria-hidden="true"></i> Return to Dashboard
@@ -375,15 +343,6 @@
         </div>
     </div>
 </div>
-
-<dialog id="successDialog">
-    <div class="modal-icon">
-        <i class="bi bi-check-lg" aria-hidden="true"></i>
-    </div>
-    <h2>Payment Notice Received!</h2>
-    <p>We are verifying your transfer. Please ensure you have sent your proof of transfer to support. Your account will unlock shortly.</p>
-    <button class="button" id="closeModalBtn" type="button">Got it, Return Home</button>
-</dialog>
 
 <script>
     // 1. Parse URL Parameters for Package
@@ -438,23 +397,7 @@
         document.body.removeChild(textArea);
     });
 
-    // 4. Payment confirmation modal trigger
-    const paidBtn = document.getElementById('paidBtn');
-    const successDialog = document.getElementById('successDialog');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-
-    paidBtn.addEventListener('click', () => {
-        if (successDialog.showModal) {
-            successDialog.showModal();
-        }
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-        successDialog.close();
-        window.location.href = 'dashboard.html';
-    });
-
-    // 5. Security Protections (matching dashboard)
+    // 4. Security Protections
     document.addEventListener("contextmenu", function(e){
         e.preventDefault();
     });
@@ -478,7 +421,6 @@
     });
 
     document.addEventListener("copy", function(e){
-        // Allow copy inside our copy action, block elsewhere
         if (e.target.id !== 'accountNumber') {
             e.preventDefault();
         }
