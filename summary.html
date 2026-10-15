@@ -1,0 +1,3615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#14071B"
+    >
+
+    <meta
+        name="description"
+        content="Discover what JOVIA Gold gives you and see how the JOVIA experience works."
+    >
+
+    <title>Discover JOVIA | Your JOVIA Gold Experience</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         BOOTSTRAP
+    ========================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         BOOTSTRAP ICONS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =========================================================
+         TAILWIND
+    ========================================================== -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        jovia: {
+
+                            plum: '#14071B',
+
+                            purple: '#30164D',
+
+                            gold: '#F0BB1E',
+
+                            goldLight: '#F2DB6F',
+
+                            green: '#36DB69',
+
+                            emerald: '#246C30',
+
+                            mint: '#E3F6CD'
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        };
+
+    </script>
+
+
+    <!-- =========================================================
+         PAGE STYLES
+    ========================================================== -->
+
+    <style>
+
+        :root {
+
+            --jovia-plum: #14071B;
+
+            --jovia-purple: #30164D;
+
+            --jovia-purple-light: #4A2670;
+
+            --jovia-gold: #F0BB1E;
+
+            --jovia-gold-light: #F2DB6F;
+
+            --jovia-green: #36DB69;
+
+            --jovia-emerald: #246C30;
+
+            --jovia-mint: #E3F6CD;
+
+            --white: #ffffff;
+
+            --muted: #bdb1c7;
+
+        }
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family: 'DM Sans', sans-serif;
+
+            color: var(--white);
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 0%,
+                    rgba(240,187,30,0.12),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 0% 40%,
+                    rgba(54,219,105,0.06),
+                    transparent 28%
+                ),
+
+                var(--jovia-plum);
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4 {
+
+            font-family: 'Manrope', sans-serif;
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+        }
+
+
+        .container-jovia {
+
+            width: min(1120px, calc(100% - 32px));
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar-jovia {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            padding: 17px 0;
+
+            background:
+
+                rgba(20,7,27,0.78);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+
+                1px solid rgba(255,255,255,0.07);
+
+        }
+
+
+        .nav-inner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: white;
+
+        }
+
+
+        .logo-symbol {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 12px;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #FFD83D,
+                    #EFA900
+                );
+
+            color: #1c101c;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(240,187,30,0.2);
+
+        }
+
+
+        .logo-symbol i {
+
+            font-size: 21px;
+
+        }
+
+
+        .logo-main {
+
+            display: block;
+
+            font-family: 'Manrope', sans-serif;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            line-height: 1;
+
+        }
+
+
+        .logo-sub {
+
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 7px;
+
+            letter-spacing: 3px;
+
+            color: #d6cadc;
+
+        }
+
+
+        .nav-back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 16px;
+
+            border-radius: 100px;
+
+            color: #d9cddd;
+
+            border:
+
+                1px solid rgba(255,255,255,0.10);
+
+            background:
+
+                rgba(255,255,255,0.035);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+        }
+
+
+        .nav-back:hover {
+
+            color: white;
+
+            background:
+
+                rgba(255,255,255,0.07);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .summary-hero {
+
+            padding: 85px 0 55px;
+
+            text-align: center;
+
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border-radius: 100px;
+
+            background:
+
+                rgba(240,187,30,0.07);
+
+            border:
+
+                1px solid rgba(240,187,30,0.23);
+
+            color: var(--jovia-gold-light);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero-badge i {
+
+            color: var(--jovia-green);
+
+        }
+
+
+        .summary-hero h1 {
+
+            max-width: 760px;
+
+            margin: auto;
+
+            font-size: clamp(38px, 6vw, 66px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            font-weight: 800;
+
+        }
+
+
+        .summary-hero h1 span {
+
+            color: var(--jovia-gold);
+
+        }
+
+
+        .hero-text {
+
+            max-width: 650px;
+
+            margin: 22px auto 0;
+
+            color: #c4b8ca;
+
+            font-size: 16px;
+
+            line-height: 1.75;
+
+        }
+
+
+        /* =====================================================
+           VIDEO / EXPERIENCE
+        ====================================================== */
+
+        .experience-wrap {
+
+            max-width: 850px;
+
+            margin: 35px auto 0;
+
+        }
+
+
+        .experience-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            border:
+
+                1px solid rgba(255,255,255,0.10);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #35194d,
+                    #16091f
+                );
+
+            box-shadow:
+
+                0 30px 80px
+                rgba(0,0,0,0.38);
+
+        }
+
+
+        .experience-card video {
+
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 7;
+
+            object-fit: cover;
+
+            background: #16091f;
+
+        }
+
+
+        .video-cover {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            text-align: center;
+
+            padding: 25px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    rgba(20,7,27,0.12),
+                    rgba(20,7,27,0.78)
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .video-play {
+
+            width: 64px;
+
+            height: 64px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: var(--jovia-gold);
+
+            color: #20120a;
+
+            font-size: 24px;
+
+            margin-bottom: 13px;
+
+            box-shadow:
+
+                0 12px 35px
+                rgba(240,187,30,0.22);
+
+        }
+
+
+        .video-cover h3 {
+
+            font-size: 19px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .video-cover p {
+
+            color: #c6b9cc;
+
+            font-size: 12px;
+
+            margin: 0;
+
+        }
+
+
+        .experience-label {
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 15px;
+
+            z-index: 2;
+
+            padding: 7px 11px;
+
+            border-radius: 8px;
+
+            background:
+
+                rgba(20,7,27,0.72);
+
+            border:
+
+                1px solid rgba(255,255,255,0.10);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        /* =====================================================
+           QUICK PROMISE
+        ====================================================== */
+
+        .promise-strip {
+
+            max-width: 850px;
+
+            margin: 25px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .promise {
+
+            padding: 17px;
+
+            border-radius: 16px;
+
+            background:
+
+                rgba(255,255,255,0.035);
+
+            border:
+
+                1px solid rgba(255,255,255,0.07);
+
+            text-align: center;
+
+        }
+
+
+        .promise i {
+
+            display: block;
+
+            color: var(--jovia-gold);
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .promise strong {
+
+            display: block;
+
+            font-size: 13px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .promise span {
+
+            color: #96899d;
+
+            font-size: 11px;
+
+        }
+
+
+        /* PROMOTIONAL SLIDER */
+
+        .jovia-promo-slider {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 480px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #100719;
+
+    isolation: isolate;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   SLIDES
+====================================================== */
+
+.promo-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 6s ease;
+
+}
+
+
+.promo-slide.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+    z-index: 2;
+
+}
+
+
+.promo-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    user-select: none;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   DARK CINEMATIC OVERLAY
+====================================================== */
+
+.promo-slide::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 7, 25, 0.08) 0%,
+            rgba(16, 7, 25, 0.10) 40%,
+            rgba(16, 7, 25, 0.82) 100%
+        );
+
+}
+
+
+/* =====================================================
+   EXPERIENCE CONTENT
+====================================================== */
+
+.promo-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 32px;
+
+    pointer-events: none;
+
+}
+
+
+.promo-overlay-content {
+
+    max-width: 650px;
+
+    color: #ffffff;
+
+}
+
+
+.promo-live {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(240, 187, 30, 0.16);
+
+    border: 1px solid rgba(255, 216, 102, 0.35);
+
+    color: #ffd866;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+.promo-live span {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #f0bb1e;
+
+    box-shadow:
+        0 0 0 4px rgba(240, 187, 30, 0.14);
+
+    animation: joviaPulse 1.6s infinite;
+
+}
+
+
+.promo-overlay h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 25px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+.promo-overlay p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.78);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   DOT NAVIGATION
+====================================================== */
+
+.promo-dots {
+
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 25px;
+
+    right: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.promo-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.45);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.promo-dot:hover {
+
+    transform: scale(1.25);
+
+}
+
+
+.promo-dot.active {
+
+    width: 25px;
+
+    border-radius: 999px;
+
+    background: #f0bb1e;
+
+}
+
+
+/* =====================================================
+   PROGRESS BAR
+====================================================== */
+
+.promo-progress {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: rgba(255,255,255,0.16);
+
+}
+
+
+#promoProgressBar {
+
+    display: block;
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #f0bb1e;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+====================================================== */
+
+@keyframes joviaPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(240, 187, 30, 0.45);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 7px rgba(240, 187, 30, 0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(240, 187, 30, 0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+
+    .jovia-promo-slider {
+
+        height: 390px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .promo-overlay {
+
+        padding: 22px;
+
+    }
+
+
+    .promo-overlay h3 {
+
+        font-size: 20px;
+
+    }
+
+
+    .promo-overlay p {
+
+        font-size: 12px;
+
+    }
+
+
+    .promo-dots {
+
+        bottom: 20px;
+
+        right: 20px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .jovia-promo-slider {
+
+        height: 330px;
+
+    }
+
+
+    .promo-overlay {
+
+        padding: 18px;
+
+    }
+
+
+    .promo-live {
+
+        font-size: 9px;
+
+        padding: 6px 10px;
+
+    }
+
+
+    .promo-overlay h3 {
+
+        font-size: 17px;
+
+    }
+
+
+    .promo-overlay p {
+
+        font-size: 11px;
+
+    }
+
+
+    .promo-dots {
+
+        right: 18px;
+
+        bottom: 18px;
+
+    }
+
+}
+
+        /* =====================================================
+           SECTION
+        ====================================================== */
+
+        .section {
+
+            padding: 80px 0;
+
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            max-width: 680px;
+
+            margin: 0 auto 42px;
+
+        }
+
+
+        .kicker {
+
+            color: var(--jovia-gold);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-size: clamp(29px, 4vw, 43px);
+
+            line-height: 1.08;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .section-heading p {
+
+            color: #aa9eaf;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           GOLD EXPERIENCE
+        ====================================================== */
+
+        .gold-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            max-width: 930px;
+
+            margin: auto;
+
+            padding: 38px;
+
+            border-radius: 28px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(240,187,30,0.13),
+                    rgba(255,255,255,0.035) 50%,
+                    rgba(54,219,105,0.045)
+                );
+
+            border:
+
+                1px solid rgba(240,187,30,0.23);
+
+        }
+
+
+        .gold-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            right: -140px;
+
+            top: -140px;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(240,187,30,0.17),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        .gold-grid {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+
+                .8fr 1.2fr;
+
+            gap: 45px;
+
+            align-items: center;
+
+        }
+
+
+        .gold-label {
+
+            color: var(--jovia-gold);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .gold-card h2 {
+
+            font-size: 38px;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .price {
+
+            color: var(--jovia-gold);
+
+            font-family: 'Manrope', sans-serif;
+
+            font-size: 43px;
+
+            font-weight: 900;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .price small {
+
+            color: #a99cae;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+        }
+
+
+        .gold-intro {
+
+            color: #c3b7c8;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 0;
+
+        }
+
+
+        .benefit-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(2, 1fr);
+
+            gap: 10px;
+
+        }
+
+
+        .benefit {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background:
+
+                rgba(0,0,0,0.14);
+
+            border:
+
+                1px solid rgba(255,255,255,0.055);
+
+        }
+
+
+        .benefit i {
+
+            color: var(--jovia-green);
+
+            font-size: 16px;
+
+            margin-top: 2px;
+
+        }
+
+
+        .benefit strong {
+
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .benefit span {
+
+            color: #93869a;
+
+            font-size: 10px;
+
+            line-height: 1.45;
+
+        }
+
+
+        /* =====================================================
+           REWARD FLOW
+        ====================================================== */
+
+        .flow {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .flow-item {
+
+            position: relative;
+
+            text-align: center;
+
+            padding: 25px 14px;
+
+        }
+
+
+        .flow-number {
+
+            width: 46px;
+
+            height: 46px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin: auto auto 14px;
+
+            border-radius: 50%;
+
+            background: var(--jovia-gold);
+
+            color: #1c101c;
+
+            font-weight: 900;
+
+        }
+
+
+        .flow-item h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .flow-item p {
+
+            color: #93869a;
+
+            font-size: 11px;
+
+            line-height: 1.55;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           VOICE NOTE
+        ====================================================== */
+
+        .voice-section {
+
+            padding: 70px 0;
+
+        }
+
+
+        .voice-card {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(54,219,105,0.09),
+                    rgba(48,22,77,0.35)
+                );
+
+            border:
+
+                1px solid rgba(54,219,105,0.15);
+
+        }
+
+
+        .voice-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 18px;
+
+            background:
+
+                rgba(54,219,105,0.13);
+
+            color: var(--jovia-green);
+
+            font-size: 26px;
+
+        }
+
+
+        .voice-content {
+
+            flex: 1;
+
+        }
+
+
+        .voice-content h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .voice-content p {
+
+            color: #a99cad;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .voice-player {
+
+            width: 100%;
+
+            height: 42px;
+
+        }
+
+
+        /* =====================================================
+           REASONS
+        ====================================================== */
+
+        .reasons {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(2, 1fr);
+
+            gap: 13px;
+
+        }
+
+
+        .reason {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 14px;
+
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background:
+
+                rgba(255,255,255,0.032);
+
+            border:
+
+                1px solid rgba(255,255,255,0.065);
+
+        }
+
+
+        .reason-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+
+                rgba(240,187,30,0.10);
+
+            color: var(--jovia-gold);
+
+        }
+
+
+        .reason h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .reason p {
+
+            color: #94879b;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           TRUST
+        ====================================================== */
+
+        .trust {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .trust-pill {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 9px 13px;
+
+            border-radius: 100px;
+
+            background:
+
+                rgba(255,255,255,0.035);
+
+            border:
+
+                1px solid rgba(255,255,255,0.07);
+
+            color: #b9adbf;
+
+            font-size: 11px;
+
+        }
+
+
+        .trust-pill i {
+
+            color: var(--jovia-green);
+
+        }
+
+
+        /* =====================================================
+           FINAL CTA
+        ====================================================== */
+
+        .final-section {
+
+            padding: 80px 0 105px;
+
+        }
+
+
+        .final-box {
+
+            position: relative;
+
+            overflow: hidden;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 58px 25px;
+
+            border-radius: 30px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #30164D,
+                    #17091f
+                );
+
+            border:
+
+                1px solid rgba(240,187,30,0.20);
+
+        }
+
+
+        .final-box::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            left: -150px;
+
+            bottom: -170px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(54,219,105,0.12),
+                    transparent 70%
+                );
+
+        }
+
+
+        .final-box h2 {
+
+            position: relative;
+
+            font-size: clamp(31px, 5vw, 48px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .final-box p {
+
+            position: relative;
+
+            max-width: 570px;
+
+            margin: 0 auto 25px;
+
+            color: #b9adbf;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .cta-button {
+
+            position: relative;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            min-height: 54px;
+
+            padding: 0 27px;
+
+            border-radius: 14px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #FFD83D,
+                    #F0A900
+                );
+
+            color: #21120b;
+
+            font-weight: 900;
+
+            font-size: 14px;
+
+            box-shadow:
+
+                0 15px 35px
+                rgba(240,187,30,0.18);
+
+            transition: .25s;
+
+        }
+
+
+        .cta-button:hover {
+
+            color: #21120b;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+
+                0 20px 45px
+                rgba(240,187,30,0.27);
+
+        }
+
+
+        .cta-note {
+
+            position: relative;
+
+            margin-top: 13px;
+
+            color: #827586;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            padding: 30px 0;
+
+            border-top:
+
+                1px solid rgba(255,255,255,0.06);
+
+            color: #817484;
+
+            font-size: 11px;
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .summary-hero {
+
+                padding-top: 65px;
+
+            }
+
+
+            .gold-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+            }
+
+
+            .flow {
+
+                grid-template-columns:
+
+                    repeat(2, 1fr);
+
+            }
+
+
+            .voice-card {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container-jovia {
+
+                width: min(100% - 26px, 1120px);
+
+            }
+
+
+            .summary-hero h1 {
+
+                letter-spacing: -2px;
+
+            }
+
+
+            .hero-text {
+
+                font-size: 14px;
+
+            }
+
+
+            .experience-card video {
+
+                aspect-ratio: 9 / 13;
+
+            }
+
+
+            .promise-strip {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .gold-card {
+
+                padding: 25px;
+
+            }
+
+
+            .gold-card h2 {
+
+                font-size: 31px;
+
+            }
+
+
+            .price {
+
+                font-size: 37px;
+
+            }
+
+
+            .benefit-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .flow {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .reasons {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .final-box {
+
+                padding: 48px 20px;
+
+            }
+
+
+            .cta-button {
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="navbar-jovia">
+
+    <div class="container-jovia nav-inner">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <img
+                src="/logo.png"
+                alt="JOVIA"
+                class="jovia-nav-logo"
+            >
+
+        </a>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="index.html"
+                class="nav-back"
+            >
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back
+
+            </a>
+
+
+            <a
+                href="register.html"
+                class="nav-continue"
+            >
+
+                Continue
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<style>
+
+    .jovia-nav-logo {
+
+        width: 125px;
+
+        max-height: 48px;
+
+        object-fit: contain;
+
+        display: block;
+
+    }
+
+
+    .nav-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+
+    .nav-continue {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        padding: 10px 17px;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f0bb1e,
+                #ffd866
+            );
+
+        color: #20120a;
+
+        text-decoration: none;
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        box-shadow:
+            0 8px 22px
+            rgba(240,187,30,0.18);
+
+    }
+
+
+    .nav-continue:hover {
+
+        transform: translateY(-1px);
+
+        box-shadow:
+            0 11px 26px
+            rgba(240,187,30,0.28);
+
+    }
+
+
+    @media (max-width: 560px) {
+
+        .jovia-nav-logo {
+
+            width: 105px;
+
+        }
+
+
+        .nav-actions {
+
+            gap: 7px;
+
+        }
+
+
+        .nav-back {
+
+            font-size: 11px;
+
+        }
+
+
+        .nav-continue {
+
+            padding: 9px 12px;
+
+            font-size: 11px;
+
+        }
+
+    }
+
+</style>
+
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+       <!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="summary-hero">
+
+    <div class="container-jovia">
+
+        <div class="hero-badge">
+
+            <i class="bi bi-stars"></i>
+
+            You made it this far — let's show you more
+
+        </div>
+
+
+        <h1>
+
+            Your Time.
+            <span>Your Choice.</span>
+            Your JOVIA Experience.
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            JOVIA brings entertainment, games, music and
+            digital activities together in one experience.
+            Choose the activities that interest you,
+            participate for your eligible activity time,
+            and track your rewards on the platform.
+
+        </p>
+
+
+        <!-- =================================================
+             JOVIA PROMOTIONAL IMAGE EXPERIENCE
+        ================================================== -->
+
+        <div class="experience-wrap">
+
+            <div class="experience-card">
+
+                <span class="experience-label">
+
+                    <i class="bi bi-images"></i>
+
+                    JOVIA EXPERIENCE
+
+                </span>
+
+
+                <!-- PROMOTIONAL SLIDESHOW -->
+
+                <div
+                    class="jovia-promo-slider"
+                    id="joviaPromoSlider"
+                >
+
+                    <!-- IMAGE 1 -->
+
+                    <div class="promo-slide active">
+
+                        <img
+                            src="https://res.cloudinary.com/ubtxx2sa/image/upload/v1791472692/IMG-20261005-WA0013_ccr30l.jpg"
+                            alt="JOVIA Promotional Experience"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE 2 -->
+
+                    <div class="promo-slide">
+
+                        <img
+                            src="https://res.cloudinary.com/ubtxx2sa/image/upload/v1791472742/IMG-20260919-WA0004_hdqyff.jpg"
+                            alt="JOVIA Entertainment Experience"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE 3 -->
+
+                    <div class="promo-slide">
+
+                        <img
+                            src="https://res.cloudinary.com/ubtxx2sa/image/upload/v1791472763/IMG-20260823-WA0100_jhvy50.jpg"
+                            alt="JOVIA Digital Activities"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE 4 -->
+
+                    <div class="promo-slide">
+
+                        <img
+                            src="https://res.cloudinary.com/ubtxx2sa/image/upload/v1791472988/IMG-20261005-WA0014_nn1cmp.jpg"
+                            alt="JOVIA Rewards Experience"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE 5 -->
+
+                    <div class="promo-slide">
+
+                        <img
+                            src="https://res.cloudinary.com/ubtxx2sa/image/upload/v1791472952/IMG-20260823-WA0095_zhhj3o.jpg"
+                            alt="JOVIA Platform Experience"
+                        >
+
+                    </div>
+
+
+                    <!-- SLIDER OVERLAY -->
+
+                    <div class="promo-overlay">
+
+                        <div class="promo-overlay-content">
+
+                            <div class="promo-live">
+
+                                <span></span>
+
+                                JOVIA EXPERIENCE
+
+                            </div>
+
+
+                            <h3>
+                                See What the JOVIA Experience Looks Like
+                            </h3>
+
+
+                            <p>
+                                Games • Videos • Music • Activities
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SLIDE INDICATORS -->
+
+                    <div class="promo-dots" id="promoDots">
+
+                        <button
+                            class="promo-dot active"
+                            data-slide="0"
+                            aria-label="Show promotional image 1"
+                        ></button>
+
+                        <button
+                            class="promo-dot"
+                            data-slide="1"
+                            aria-label="Show promotional image 2"
+                        ></button>
+
+                        <button
+                            class="promo-dot"
+                            data-slide="2"
+                            aria-label="Show promotional image 3"
+                        ></button>
+
+                        <button
+                            class="promo-dot"
+                            data-slide="3"
+                            aria-label="Show promotional image 4"
+                        ></button>
+
+                        <button
+                            class="promo-dot"
+                            data-slide="4"
+                            aria-label="Show promotional image 5"
+                        ></button>
+
+                    </div>
+
+
+                    <!-- PROGRESS BAR -->
+
+                    <div class="promo-progress">
+
+                        <span id="promoProgressBar"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK PROMISES -->
+
+        <div class="promise-strip">
+
+            <div class="promise">
+
+                <i class="bi bi-controller"></i>
+
+                <strong>
+                    Play
+                </strong>
+
+                <span>
+                    Enjoy game sessions
+                </span>
+
+            </div>
+
+
+            <div class="promise">
+
+                <i class="bi bi-play-btn"></i>
+
+                <strong>
+                    Watch
+                </strong>
+
+                <span>
+                    Explore video content
+                </span>
+
+            </div>
+
+
+            <div class="promise">
+
+                <i class="bi bi-music-note-beamed"></i>
+
+                <strong>
+                    Listen
+                </strong>
+
+                <span>
+                    Enjoy music experiences
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+             VOICE EXPLANATION
+        ====================================================== -->
+
+        <section class="voice-section">
+
+            <div class="container-jovia">
+
+                <div class="section-heading">
+
+                    <div class="kicker">
+                        Prefer listening?
+                    </div>
+
+                    <h2>
+                        Let JOVIA explain it to you.
+                    </h2>
+
+                    <p>
+                        If you would rather listen than read,
+                        play the short explanation below before
+                        deciding whether JOVIA is right for you.
+                    </p>
+
+                </div>
+
+
+                <div class="voice-card">
+
+
+                    <div class="voice-icon">
+
+                        <i class="bi bi-mic-fill"></i>
+
+                    </div>
+
+
+                    <div class="voice-content">
+
+                        <h3>
+                            JOVIA Audio Explanation
+                        </h3>
+
+                        <p>
+                            A short voice explanation of how
+                            the JOVIA experience works and
+                            what you can expect after joining.
+                        </p>
+
+
+                        <!--
+
+                            CLOUDINARY AUDIO
+
+                            Replace the source below with
+                            your Cloudinary audio URL.
+
+                        -->
+
+                        <audio
+                            id="joviaVoice"
+                            class="voice-player"
+                            controls
+                            preload="metadata"
+                        >
+
+                            
+
+                            <source
+                                src="https://res.cloudinary.com/ubtxx2sa/video/upload/v1791469493/VID-20261008-WA0071_rychpf.mp3"
+                                type="audio/mpeg"
+                            >
+
+                            
+
+                            Your browser does not support
+                            audio playback.
+
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- =====================================================
+     JOVIA PROMOTIONAL SLIDER SCRIPT
+====================================================== -->
+
+<script>
+
+(function () {
+
+    const slides =
+        document.querySelectorAll(".promo-slide");
+
+    const dots =
+        document.querySelectorAll(".promo-dot");
+
+    const progressBar =
+        document.getElementById("promoProgressBar");
+
+    const slider =
+        document.getElementById("joviaPromoSlider");
+
+
+    if (!slides.length) return;
+
+
+    let currentSlide = 0;
+
+    let timer = null;
+
+    let progressTimer = null;
+
+
+    /* Time each image stays visible */
+
+    const slideDuration = 6000;
+
+
+    function showSlide(index) {
+
+        slides.forEach((slide, i) => {
+
+            slide.classList.toggle(
+                "active",
+                i === index
+            );
+
+        });
+
+
+        dots.forEach((dot, i) => {
+
+            dot.classList.toggle(
+                "active",
+                i === index
+            );
+
+        });
+
+
+        currentSlide = index;
+
+        startProgress();
+
+    }
+
+
+    function nextSlide() {
+
+        let next =
+            currentSlide + 1;
+
+        if (next >= slides.length) {
+
+            next = 0;
+
+        }
+
+
+        showSlide(next);
+
+    }
+
+
+    function startSlider() {
+
+        clearInterval(timer);
+
+        timer = setInterval(
+            nextSlide,
+            slideDuration
+        );
+
+        startProgress();
+
+    }
+
+
+    function startProgress() {
+
+        clearInterval(progressTimer);
+
+
+        progressBar.style.transition = "none";
+
+        progressBar.style.width = "0%";
+
+
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                progressBar.style.transition =
+                    "width " + slideDuration + "ms linear";
+
+                progressBar.style.width = "100%";
+
+            });
+
+        });
+
+    }
+
+
+    /* Click dots */
+
+    dots.forEach((dot) => {
+
+        dot.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const index =
+                parseInt(
+                    this.getAttribute("data-slide"),
+                    10
+                );
+
+
+            showSlide(index);
+
+            startSlider();
+
+        });
+
+    });
+
+
+    /* Click the promotional image
+       to move to the next image */
+
+    slider.addEventListener("click", function () {
+
+        nextSlide();
+
+        startSlider();
+
+    });
+
+
+    /* Start */
+
+    showSlide(0);
+
+    startSlider();
+
+
+})();
+
+</script>
+
+
+
+       <!-- =====================================================
+     SILVER & GOLD EXPERIENCE
+====================================================== -->
+
+<section class="section">
+    <div class="container-jovia">
+
+        <div class="section-heading">
+            <div class="kicker">The experience</div>
+
+            <h2>Two packages. Multiple ways to engage.</h2>
+
+            <p>
+                Explore eligible trial activities, then choose
+                your activation package. Paid activation is
+                required to withdraw your earnings.
+            </p>
+        </div>
+
+        <!-- SILVER -->
+        <div class="gold-card silver-experience">
+            <div class="gold-grid">
+
+                <div>
+                    <div class="gold-label">
+                        JOVIA
+                        <span data-package-name="1">Silver</span>
+                    </div>
+
+                    <h2>Your essential access</h2>
+
+                    <div class="price">
+                        <span data-package-price="1">₦9,000</span>
+                        <small>account activation</small>
+                    </div>
+
+                    <p class="gold-intro">
+                        Access core JOVIA activities with fixed
+                        sessions and clear participation requirements.
+                    </p>
+
+                    <a href="register.php" class="primary-btn">
+                        Get Started
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <div class="benefit">
+                        <i class="bi bi-play-circle-fill" aria-hidden="true"></i>
+                        <div>
+                            <strong>Video Activities</strong>
+                            <span>
+                                Watch eligible content and complete
+                                the published session requirements.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-controller" aria-hidden="true"></i>
+                        <div>
+                            <strong>Original Games</strong>
+                            <span>
+                                Participate in available game tasks
+                                using their fixed sessions.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
+                        <div>
+                            <strong>Music Activities</strong>
+                            <span>
+                                Complete eligible audio sessions
+                                available on your account.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-clock" aria-hidden="true"></i>
+                        <div>
+                            <strong>Fixed Activity Time</strong>
+                            <span>
+                                Use the session duration assigned
+                                to each eligible activity.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-megaphone" aria-hidden="true"></i>
+                        <div>
+                            <strong>Sponsored Tasks</strong>
+                            <span>
+                                Follow sharing instructions and
+                                submit proof for administrator approval.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        <div>
+                            <strong>Withdrawal Access</strong>
+                            <span>
+                                Access withdrawals after verified
+                                activation, subject to account rules.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- GOLD -->
+        <div class="gold-card">
+            <div class="gold-grid">
+
+                <div>
+                    <div class="gold-label">
+                        JOVIA
+                        <span data-package-name="2">Gold</span>
+                    </div>
+
+                    <h2>Your expanded access</h2>
+
+                    <div class="price">
+                        <span data-package-price="2">₦15,000</span>
+                        <small>account activation</small>
+                    </div>
+
+                    <p class="gold-intro">
+                        Everything in the essential package, plus
+                        adjustable sessions for supported activities
+                        and additional features when available.
+                    </p>
+
+                    <a href="register.php" class="primary-btn">
+                        Get Started
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <div class="benefit">
+                        <i class="bi bi-play-circle-fill" aria-hidden="true"></i>
+                        <div>
+                            <strong>Video Activities</strong>
+                            <span>
+                                Watch eligible content and complete
+                                the published session requirements.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-controller" aria-hidden="true"></i>
+                        <div>
+                            <strong>Original Games</strong>
+                            <span>
+                                Explore available games and their
+                                eligible activity sessions.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
+                        <div>
+                            <strong>Music Activities</strong>
+                            <span>
+                                Complete eligible audio sessions
+                                available on your account.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-clock-history" aria-hidden="true"></i>
+                        <div>
+                            <strong>Adjustable Time</strong>
+                            <span>
+                                Select from the durations offered
+                                by supported activities.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-megaphone" aria-hidden="true"></i>
+                        <div>
+                            <strong>Sponsored Tasks</strong>
+                            <span>
+                                Submit completion proof. Rewards
+                                require administrator approval.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-gift" aria-hidden="true"></i>
+                        <div>
+                            <strong>Friday Bonus Rewards</strong>
+                            <span>
+                                Gold-level access when launched,
+                                under the published eligibility rules.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+                        <div>
+                            <strong>JOVIA AI</strong>
+                            <span>
+                                Additional AI features when launched,
+                                subject to the available usage limits.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-meta" aria-hidden="true"></i>
+                        <div>
+                            <strong>Meta Activities</strong>
+                            <span>
+                                Eligible tasks across supported social
+                                platforms when available.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        <div>
+                            <strong>Withdrawal Access</strong>
+                            <span>
+                                Access withdrawals after verified
+                                activation, subject to account rules.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+        <!-- =====================================================
+             HOW THE EXPERIENCE WORKS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="container-jovia">
+
+                <div class="section-heading">
+
+                    <div class="kicker">
+                        Simple process
+                    </div>
+
+                    <h2>
+                        From activity to reward in a few steps.
+                    </h2>
+
+                    <p>
+                        JOVIA is designed to keep the experience
+                        simple. Choose an eligible activity,
+                        select your available time, start the
+                        session and monitor your rewards.
+                    </p>
+
+                </div>
+
+
+                <div class="flow">
+
+
+                    <div class="flow-item">
+
+                        <div class="flow-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Choose
+                        </h3>
+
+                        <p>
+                            Select an available activity you
+                            want to participate in.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-item">
+
+                        <div class="flow-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Set Time
+                        </h3>
+
+                        <p>
+                            Gold users can select their
+                            preferred activity duration.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-item">
+
+                        <div class="flow-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Start
+                        </h3>
+
+                        <p>
+                            Press Start and participate while
+                            your eligible session is active.
+                        </p>
+
+                    </div>
+
+
+                    <div class="flow-item">
+
+                        <div class="flow-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Track
+                        </h3>
+
+                        <p>
+                            Your eligible rewards can then be
+                            viewed through your JOVIA account.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHY CONTINUE
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="container-jovia">
+
+                <div class="section-heading">
+
+                    <div class="kicker">
+                        Before you decide
+                    </div>
+
+                    <h2>
+                        Why people are looking at JOVIA.
+                    </h2>
+
+                    <p>
+                        JOVIA brings familiar online activities
+                        into one structured platform instead of
+                        making users jump between different
+                        experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="reasons">
+
+
+                    <div class="reason">
+
+                        <div class="reason-icon">
+
+                            <i class="bi bi-grid-1x2-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Everything in one place
+                            </h3>
+
+                            <p>
+                                Videos, games, music and other
+                                activities are brought together
+                                inside one JOVIA experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reason">
+
+                        <div class="reason-icon">
+
+                            <i class="bi bi-phone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Built for everyday devices
+                            </h3>
+
+                            <p>
+                                The experience is designed around
+                                the smartphone and everyday
+                                internet usage.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reason">
+
+                        <div class="reason-icon">
+
+                            <i class="bi bi-sliders"></i>
+
+                        </div>
+
+                        <div>
+    <h3>
+        More control with
+        <span data-package-name="2">Gold</span>
+    </h3>
+
+    <p>
+        Choose your activity duration from the options
+        offered by supported tasks.
+    </p>
+</div>
+
+                    </div>
+
+
+                    <div class="reason">
+
+                        <div class="reason-icon">
+
+                            <i class="bi bi-stars"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                More than entertainment
+                            </h3>
+
+                            <p>
+                                JOVIA combines entertainment,
+                                digital activities and learning
+                                opportunities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- TRUST -->
+
+                <div class="trust">
+
+                    <div class="trust-pill">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Simple to understand
+
+                    </div>
+
+
+                    <div class="trust-pill">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Mobile friendly
+
+                    </div>
+
+
+                    <div class="trust-pill">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Multiple activities
+
+                    </div>
+
+
+                    <div class="trust-pill">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Gold access
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-section">
+
+            <div class="container-jovia">
+
+                <div class="final-box">
+
+                    <h2>
+                        Ready to experience JOVIA?
+                    </h2>
+
+                    <p>
+                        If the JOVIA experience sounds like
+                        something you would enjoy, the next step
+                        is simple. Create your account and
+                        continue to the Gold registration.
+                    </p>
+
+
+                    <a
+                        href="register.html"
+                        class="cta-button"
+                    >
+
+                        Continue to Registration
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
+
+
+                    <div class="cta-note">
+
+                        JOVIA registration • ₦15,000 • ₦9,000
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container-jovia">
+
+            © 2026 JOVIA Network.
+            Every Second Creates Value.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /*
+         * =======================================================
+         * JOVIA SUMMARY VIDEO
+         * =======================================================
+         *
+         * When your Cloudinary URL is ready, replace:
+         *
+         * YOUR-CLOUDINARY-VIDEO-URL.mp4
+         *
+         * inside the <video> element above.
+         *
+         * =======================================================
+         */
+
+
+        const summaryVideo =
+            document.getElementById("summaryVideo");
+
+
+        const videoCover =
+            document.getElementById("videoCover");
+
+
+        /*
+         * Hide the placeholder when an actual
+         * video source is loaded.
+         */
+
+        if (summaryVideo) {
+
+            summaryVideo.addEventListener(
+                "loadeddata",
+                function () {
+
+                    if (videoCover) {
+
+                        videoCover.style.display = "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /*
+         * =======================================================
+         * VOICE NOTE
+         * =======================================================
+         *
+         * The audio element is already prepared for Cloudinary.
+         *
+         * Later we can also add:
+         *
+         * - custom play button
+         * - animated waveform
+         * - progress percentage
+         * - playback speed
+         *
+         * without changing the page structure.
+         *
+         * =======================================================
+         */
+
+
+        const voice =
+            document.getElementById("joviaVoice");
+
+
+        if (voice) {
+
+            voice.addEventListener(
+                "play",
+                function () {
+
+                    console.log(
+                        "JOVIA explanation started."
+                    );
+
+                }
+            );
+
+        }
+
+
+        /*
+         * =======================================================
+         * SIMPLE SCROLL REVEAL
+         * =======================================================
+         */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".gold-card, .flow-item, .reason, .voice-card"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.style.opacity = "1";
+
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                element.style.opacity = "0";
+
+                element.style.transform =
+                    "translateY(18px)";
+
+                element.style.transition =
+                    "opacity .7s ease, transform .7s ease";
+
+                revealObserver.observe(element);
+
+            }
+        );
+
+    </script>
+
+    <script>
+    document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
+
+document.addEventListener("keydown", function(e){
+
+    if (
+        e.key === "F12" ||
+
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+
+        (e.ctrlKey && e.shiftKey && e.key === "J") ||
+
+        (e.ctrlKey && e.shiftKey && e.key === "C") ||
+
+        (e.ctrlKey && e.key === "U") ||
+
+        (e.ctrlKey && e.key === "S")
+
+    ){
+
+        e.preventDefault();
+        return false;
+
+    }
+
+});
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.setAttribute("draggable","false");
+
+});
+
+document.addEventListener("copy",function(e){
+
+    e.preventDefault();
+
+});
+
+document.addEventListener("cut",function(e){
+
+    e.preventDefault();
+
+});
+
+document.addEventListener("paste",function(e){
+
+    e.preventDefault();
+
+});
+
+</script>
+<style>
+    body{
+
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+
+}
+</style>
+
+
+</body>
+</html>
